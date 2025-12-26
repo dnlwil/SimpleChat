@@ -25,7 +25,7 @@ void *rcv_messages(void *new_socket)
         }
 
         buff[read_ret] = '\0';
-        printf("Reveived message: %s\n", buff);
+        printf("Received message: %s\n", buff);
     }
 
     return NULL;

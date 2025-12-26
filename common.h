@@ -8,7 +8,16 @@
 #include <sys/socket.h>
 #include <unistd.h>
 
-#define ERROR_CHECK(a,b) if (a < 0) {printf("Error on >> %s << step.\nValue of variable = %d\n", b, a); perror("error"); exit(-1);}
+#define ERROR_CHECK(a,b) \
+    do { \
+        if (a < 0) \
+        { \
+            printf("Error on >> %s << step.\nValue of variable = %d\n", b, a); \
+            perror("error"); \
+            exit(-1); \
+        } \
+    } while(0)
+
 #define MAXLINE 4096u
 
 typedef unsigned char uint8;
